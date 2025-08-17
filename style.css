@@ -12,9 +12,9 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 40px;
-  overflow: hidden; /* biar gak ada scroll */
+  align-items: flex-start; /* mulai dari atas */
+  padding-top: 60px;       /* geser seluruh layout ke bawah dari atas layar */
+  overflow: hidden;        /* hilangkan scroll */
 }
 
 /* Container utama: canvas kiri + HUD kanan */
@@ -22,8 +22,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: -20px;
-  gap: 40px; /* jarak antara board & panel */
+  gap: 40px;       /* jarak antara board & panel */
+  /* margin-top negatif dihapus, padding-top body sudah cukup */
 }
 
 /* Game board scaling */
@@ -31,20 +31,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* penuh layar */
+  height: auto;        /* biar tidak penuh 100vh lagi */
+  max-height: 90vh;    /* tetap responsive */
   gap: 2rem;
   padding: 1rem;
   box-sizing: border-box;
 }
 
+/* Canvas board */
 canvas#board {
-  /* aspect ratio 1:2 → biar proporsi Tetris asli */
-  width: 75vh;   /* bikin canvas ikutin tinggi viewport */
-  height: 75vh;  /* tetap 1:2, auto scale ke layar */
-  max-height: 80vh;
-  max-width: calc(80vh / 2); /* karena board Tetris = 10x20 blok (1:2) */
+  /* aspect ratio 1:2 → proporsi Tetris asli */
+  width: 70vh;          /* ukuran dikurangi supaya muat vertical */
+  height: 70vh;
+  max-height: 75vh;
+  max-width: calc(75vh / 2);
   border: 2px solid #555;
   background: #111;
+  display: block;
 }
 
 /* Panel HUD */
@@ -53,9 +56,11 @@ canvas#board {
   flex-direction: column;
   gap: 20px;
   min-width: 160px;
+  align-items: flex-start; /* rapi di kiri */
 }
 
 .next-piece, .stat, .help {
+	margin-bottom: 10px;
   background: #1e1e1e;
   border: 1px solid #333;
   border-radius: 8px;
@@ -72,11 +77,16 @@ canvas#board {
 }
 
 .next-box {
-  width: 80px;
-  height: 80px;
+  width: 100px;   /* dulu 60px, sekarang diperbesar */
+  height: 100px;  /* dulu 60px, sekarang diperbesar */
+  max-width: 100%;
+  max-height: 100%;
   background: #000;
   border: 1px solid #555;
-  margin: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Stats */
@@ -84,6 +94,7 @@ canvas#board {
   display: flex;
   justify-content: space-between;
   margin-bottom: 6px;
+	padding-top: 10px;
 }
 
 .stat-value {
