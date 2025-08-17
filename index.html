@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blockdrop Desktop Version</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="desktop-container">
+    <div class="game-board">
+      <!-- Board -->
+      <canvas id="board" width="250" height="500"></canvas>
+
+      <!-- HUD Panel -->
+      <div class="hud-panel">
+        <div class="next-piece">
+          <div class="title-sm">Next</div>
+          <div class="next-box" id="nextBox"></div>
+        </div>
+
+        <div class="stat">
+          <div class="title-sm">Stats</div>
+          <div class="stat-row">
+            <span>Score</span><span class="stat-value" id="score">0</span>
+          </div>
+          <div class="stat-row">
+            <span>Level</span><span class="stat-value" id="level">0</span>
+          </div>
+          <div class="stat-row">
+            <span>Lines</span><span class="stat-value" id="lines">0</span>
+          </div>
+        </div>
+
+        <div class="help">
+          <div class="title-sm">Controls</div>
+          <ul>
+            <li>◀️ ▶️ Move</li>
+            <li>🔽 Hard Drop</li>
+            <li>🔼 Pause / Resume</li>
+            <li>OK Rotate</li>
+            <li>Enter Reset</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
