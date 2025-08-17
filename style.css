@@ -12,7 +12,8 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 20px;
   overflow: hidden; /* biar gak ada scroll */
 }
 
@@ -20,7 +21,8 @@ body {
 .desktop-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 20px;
   gap: 40px; /* jarak antara board & panel */
 }
 
@@ -37,10 +39,10 @@ body {
 
 canvas#board {
   /* aspect ratio 1:2 → biar proporsi Tetris asli */
-  width: 90vh;   /* bikin canvas ikutin tinggi viewport */
-  height: 90vh;  /* tetap 1:2, auto scale ke layar */
-  max-height: 95vh;
-  max-width: calc(95vh / 2); /* karena board Tetris = 10x20 blok (1:2) */
+  width: 80vh;   /* bikin canvas ikutin tinggi viewport */
+  height: 80vh;  /* tetap 1:2, auto scale ke layar */
+  max-height: 90vh;
+  max-width: calc(90vh / 2); /* karena board Tetris = 10x20 blok (1:2) */
   border: 2px solid #555;
   background: #111;
 }
