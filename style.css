@@ -22,7 +22,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 20px;
+  margin-top: -20px;
   gap: 40px; /* jarak antara board & panel */
 }
 
