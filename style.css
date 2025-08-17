@@ -39,10 +39,10 @@ body {
 
 canvas#board {
   /* aspect ratio 1:2 → biar proporsi Tetris asli */
-  width: 80vh;   /* bikin canvas ikutin tinggi viewport */
-  height: 80vh;  /* tetap 1:2, auto scale ke layar */
-  max-height: 90vh;
-  max-width: calc(90vh / 2); /* karena board Tetris = 10x20 blok (1:2) */
+  width: 75vh;   /* bikin canvas ikutin tinggi viewport */
+  height: 75vh;  /* tetap 1:2, auto scale ke layar */
+  max-height: 80vh;
+  max-width: calc(80vh / 2); /* karena board Tetris = 10x20 blok (1:2) */
   border: 2px solid #555;
   background: #111;
 }
